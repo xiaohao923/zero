@@ -5,28 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>零號家規</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background-color: #000;
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
       color: #fff;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Segoe UI", "微軟正黑體", sans-serif;
       padding: 40px 20px;
-      line-height: 1.8;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 860px;
       margin: auto;
       background: rgba(255, 255, 255, 0.05);
       padding: 30px 25px;
-      border-radius: 12px;
+      border-radius: 16px;
       border: 1px solid #444;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h1 {
       text-align: center;
-      font-size: 2.5em;
-      color: #ffffff;
-      border-bottom: 2px solid #999;
+      font-size: 2.6em;
+      color: #ff9bbf;
+      border-bottom: 2px solid #888;
       padding-bottom: 10px;
       margin-bottom: 30px;
       letter-spacing: 5px;
@@ -34,19 +53,21 @@
 
     ol {
       padding-left: 20px;
-      font-size: 1.1em;
+      font-size: 1.15em;
+      line-height: 1.9em;
     }
 
     li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .note {
-      margin-top: 30px;
+      margin-top: 35px;
       font-size: 1.05em;
       color: #ffd700;
       font-weight: bold;
-      line-height: 1.6;
+      line-height: 1.8;
+      text-align: center;
     }
 
     .red {
@@ -56,12 +77,14 @@
 
     .back-link {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 50px;
     }
 
     .back-link a {
       color: #aaa;
       text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05em;
     }
 
     .back-link a:hover {
@@ -70,11 +93,24 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        padding: 20px 15px;
+      }
+
       h1 {
         font-size: 2em;
+        letter-spacing: 3px;
       }
 
       ol {
+        font-size: 1em;
+      }
+
+      .note {
+        font-size: 0.95em;
+      }
+
+      .back-link a {
         font-size: 1em;
       }
     }
@@ -93,12 +129,12 @@
       <li>收人一律年滿16歲（除非有特殊情況）。</li>
       <li>家族不收小帳，除非家族人被鎖。</li>
       <li>嚴禁截圖資金防護罩，抓到一律踢出。</li>
-      <li>寶箱發放週日晚上 10:30 ，逾時不候。</li>
+      <li>寶箱發放週日晚上 10:30，逾時不候。</li>
       <li>族長說的一律都是對的，無法反駁。</li>
     </ol>
 
     <div class="note">
-      上述所有家族事項僅限於有掛馬甲小帳<br>
+      上述所有家族事項僅限於「有掛馬甲小帳」<br>
       小帳未掛馬甲一律不受理
     </div>
 
