@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WePlay 家族介紹</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1602526210591-5b8a9cb3dc13') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding: 50px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: floatTitle 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatTitle {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff5da2;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff2d89;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>🌸 WePlay家族「零號」</h1>
+      <p>
+        我們是來自 WePlay 的溫暖大家族「零號」，專注於歡樂、互助與陪伴。<br />
+        無論你是唱將、陪玩、還是只是想找人聊天放鬆，我們都歡迎你加入 💖<br />
+        加入我們，你不孤單～
+      </p>
+
+      <p>
+        ✅ 每週家族活動 <br />
+        ✅ Discord群交流 <br />
+        ✅ 家族專屬頭像 + 專屬稱號 <br />
+        ✅ 專屬管理 & 每月抽獎活動
+      </p>
+
+      <a href="https://discord.gg/你的邀請碼" class="button">點我加入我們的 Discord！</a>
+
+      <footer>
+        <p>© 2025 WePlay 零號家族 | Design by 小皓</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
