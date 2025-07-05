@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WePlay 家族介紹</title>
+  <title>ø零號戰區ø</title>
+  <meta name="description" content="WePlay 零號戰區家族介紹｜家族規則、福利、活動資訊一次看！" />
   <style>
     * {
       margin: 0;
@@ -19,8 +20,37 @@
       text-shadow: 1px 1px 3px #000;
     }
 
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav h2 {
+      font-size: 1.5em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff5da2;
+    }
+
     .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.65);
       min-height: 100vh;
       padding: 50px 20px;
     }
@@ -29,6 +59,7 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
+      animation: fadeIn 1.2s ease-out;
     }
 
     h1 {
@@ -42,10 +73,21 @@
       to { transform: translateY(-10px); }
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     p {
       font-size: 1.2em;
       line-height: 1.8em;
       margin-bottom: 30px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      margin: 30px 0;
     }
 
     .button {
@@ -55,11 +97,13 @@
       color: white;
       border-radius: 8px;
       text-decoration: none;
-      transition: background-color 0.3s;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     .button:hover {
       background-color: #ff2d89;
+      transform: scale(1.05);
     }
 
     footer {
@@ -67,19 +111,45 @@
       font-size: 0.9em;
       opacity: 0.7;
     }
+
+    /* 響應式調整 */
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- 導覽列 -->
+  <nav>
+    <h2>ø零號戰區ø</h2>
+    <ul>
+      <li><a href="#">首頁</a></li>
+      <li><a href="#">家族介紹</a></li>
+      <li><a href="#">加入我們</a></li>
+      <li><a href="#">聯絡我們</a></li>
+    </ul>
+  </nav>
+
   <div class="overlay">
     <div class="container">
       <h1>ø零號戰區ø</h1>
       <p>
-        我們是WePlay零號戰區(1721)<br />
+        我們是WePlay零號戰區 (1721)<br />
         無論你是小孩還是成人都歡迎您加入<br />
         招生標準!!<br />
-        首捐2500周捐1000 須聽得懂人話<br />
+        首捐2500 周捐1000 須聽得懂人話<br />
         不收外流/背骨/沒錢沒顏低抗壓的外星生物
       </p>
+
+      <hr />
 
       <p>
         ✅ 每週家族須開會 <br />
@@ -88,12 +158,13 @@
         ✅ 每月抽獎活動
       </p>
 
-      <a href="https://discord.gg/你的邀請碼" class="button">點我加入我們的 Discord！</a>
+      <a href="https://discord.gg/你的邀請碼" class="button" target="_blank">點我加入我們的 Discord！</a>
 
       <footer>
-        <p>© 2025 WePlay 零號家族 | Design by 小皓</p>
+        <p>© 2025 WePlay 零號戰區 | Design by 小皓</p>
       </footer>
     </div>
   </div>
+
 </body>
 </html>
