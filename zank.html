@@ -11,45 +11,48 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
+      font-family: "Segoe UI", "微軟正黑體", sans-serif;
       background: linear-gradient(to right top, #0f0c29, #302b63, #24243e);
       color: #fff;
-      font-family: "Segoe UI", "微軟正黑體", sans-serif;
+    }
+
+    body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      padding: 20px;
     }
 
     .glass-box {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
-      padding: 40px 30px;
+      padding: 30px 20px;
       max-width: 700px;
-      width: 90%;
+      width: 100%;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       margin-bottom: 20px;
       color: #ffe066;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-shadow: 0 0 10px rgba(255, 230, 102, 0.5);
     }
 
     .typewriter {
-      font-size: 1.5em;
-      color: #fff;
-      min-height: 50px;
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      min-height: 2.5em;
       white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #fff;
       animation: blink 0.75s step-end infinite;
+      line-height: 1.5;
     }
 
     @keyframes blink {
@@ -70,7 +73,7 @@
       "沒有魅力的帳號：哈嘍要不要買禮物卡 只能頻果卡呦",
       "你好！可以跟我掛密友嗎你先出我之後給你",
       "哈嘍！要不要互刷禮物漲魅力",
-      "我要退遊了！",
+      "我要退遊了！"
     ];
 
     let index = 0;
