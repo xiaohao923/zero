@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>打遊戲跑單常見話術</title>
   <style>
     * {
@@ -48,11 +48,12 @@
     .typewriter {
       font-size: clamp(1rem, 4vw, 1.5rem);
       min-height: 2.5em;
-      white-space: nowrap;
       overflow: hidden;
       border-right: 2px solid #fff;
       animation: blink 0.75s step-end infinite;
       line-height: 1.5;
+      white-space: normal;        /* ✅ 換行 */
+      word-break: break-word;     /* ✅ 長字換行 */
     }
 
     @keyframes blink {
