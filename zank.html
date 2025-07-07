@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打遊戲跑單常見話術</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right top, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      font-family: "Segoe UI", "微軟正黑體", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 700px;
+      width: 90%;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ffe066;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px rgba(255, 230, 102, 0.5);
+    }
+
+    .typewriter {
+      font-size: 1.5em;
+      color: #fff;
+      min-height: 50px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-box">
+    <h1>🎮 跑單話術展示</h1>
+    <div class="typewriter" id="typewriter"></div>
+  </div>
+
+  <script>
+    const phrases = [
+      "沒有魅力的帳號：哈嘍要不要買禮物卡 只能頻果卡呦",
+      "你好！可以跟我掛密友嗎你先出我之後給你",
+      "哈嘍！要不要互刷禮物漲魅力",
+      "我要退遊了！",
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    const typewriter = document.getElementById("typewriter");
+
+    function type() {
+      if (charIndex < phrases[index].length) {
+        typewriter.textContent += phrases[index].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 80);
+      } else {
+        setTimeout(erase, 1500);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typewriter.textContent = phrases[index].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 40);
+      } else {
+        index = (index + 1) % phrases.length;
+        setTimeout(type, 300);
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
