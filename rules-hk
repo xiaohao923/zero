@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>零號家規</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      color: #fff;
+      font-family: "Segoe UI", "微軟正黑體", sans-serif;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px 25px;
+      border-radius: 16px;
+      border: 1px solid #444;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.6em;
+      color: #ff9bbf;
+      border-bottom: 2px solid #888;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      letter-spacing: 5px;
+    }
+
+    ol {
+      padding-left: 20px;
+      font-size: 1.15em;
+      line-height: 1.9em;
+    }
+
+    li {
+      margin-bottom: 14px;
+    }
+
+    .note {
+      margin-top: 35px;
+      font-size: 1.05em;
+      color: #ffd700;
+      font-weight: bold;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .red {
+      color: #ff5c8a;
+      font-weight: bold;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .back-link a {
+      color: #aaa;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05em;
+    }
+
+    .back-link a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #ff7fa8;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+    }
+
+    .download-btn:hover {
+      background-color: #ff5c8a;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 15px;
+      }
+
+      h1 {
+        font-size: 2em;
+        letter-spacing: 3px;
+      }
+
+      ol {
+        font-size: 1em;
+      }
+
+      .note {
+        font-size: 0.95em;
+      }
+
+      .back-link a {
+        font-size: 1em;
+      }
+
+      .download-btn {
+        font-size: 0.95em;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>— 家族規矩 —</h1>
+
+    <ol>
+      <li>唔準跑單，違規即刻踢，唔會幫你兜。</li>
+      <li>唔好借你個主帳畀人玩，違規都係直接踢走。</li>
+      <li>唔好亂搞家族權限，出事罰錢，唔聽講直接踢。</li>
+      <li>偷人嘢、玩偷取？唔洗講，直接踢，唔收返。</li>
+      <li>有事對外人講，唔需要道歉，家族永遠無錯。</li>
+      <li>家族內訌一律由幹部處理，唔好自作主張。</li>
+      <li>收人要夠 16 歲，唔夠齡唔收（特別情況另算）。</li>
+      <li>唔收小帳，除非主帳比封咗。</li>
+      <li>唔準 cap 圖資金保護罩，捉到就踢，冇傾。</li>
+      <li>寶箱會喺星期日夜晚 10:30 發，唔準時就冇份。</li>
+      <li>族長講咩就係咩，唔接受反駁。</li>
+    </ol>
+
+    <div class="note">
+      上面啲規矩只適用於「有掛馬甲小帳」<br>
+      冇掛馬甲嘅小帳一律唔處理
+    </div>
+
+    <div class="note red" style="margin-top: 20px;">
+      想入會，淨係得 楊非尋、槓鈴老、小皓 可以處理
+    </div>
+
+    <div class="back-link">
+      🔙 <a href="index.html">返主頁</a>
+    </div>
+
+    <div class="back-link">
+      📥 <a href="IMG_5496.jpeg" download="零號家規.jpeg" class="download-btn">下載家規圖</a>
+    </div>
+  </div>
+</body>
+</html>
