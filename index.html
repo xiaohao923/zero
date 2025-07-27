@@ -125,6 +125,28 @@
       opacity: 0.7;
     }
 
+    /* 音樂播放按鈕樣式 */
+    #playBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      background: #ff5da2;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff5da2;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    #playBtn:hover {
+      background: #ff2d89;
+      box-shadow: 0 0 15px #ff2d89;
+    }
+
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -153,6 +175,13 @@
       .button {
         padding: 10px 20px;
         font-size: 0.9em;
+      }
+
+      #playBtn {
+        bottom: 15px;
+        right: 15px;
+        font-size: 0.9em;
+        padding: 10px 16px;
       }
     }
   </style>
@@ -208,6 +237,16 @@
       </footer>
     </div>
   </div>
+
+  <!-- ⬇️ 音樂播放器與播放按鈕 -->
+  <audio id="bgm" loop>
+    <source src="0Hao屌BB.m4a" type="audio/mp4">
+    你的瀏覽器不支援音訊播放QQ
+  </audio>
+
+  <button id="playBtn" onclick="document.getElementById('bgm').play()">
+    ▶ 播放 0Hao屌BB 🎵
+  </button>
 
 </body>
 </html>
