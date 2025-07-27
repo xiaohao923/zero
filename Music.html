@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>零號戰區主題曲</title>
+  <title>零號戰區主題曲 - 狂爆版</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: radial-gradient(circle at center, #1b1b1b, #0a0a0a);
+      background: #0b0b0f;
       color: #fff;
       font-family: "Segoe UI", "微軟正黑體", sans-serif;
       line-height: 1.8;
       padding: 30px 20px;
       overflow-x: hidden;
+      position: relative;
+      border: 5px solid transparent;
+      animation: glowBorder 5s infinite ease-in-out;
+    }
+
+    @keyframes glowBorder {
+      0%, 100% { box-shadow: 0 0 20px #ff5da2, 0 0 40px #ff5da2 inset; }
+      50% { box-shadow: 0 0 30px #ff2d89, 0 0 60px #ff2d89 inset; }
     }
 
     h1 {
       text-align: center;
       color: #ff5da2;
       font-size: 2.5em;
-      text-shadow: 0 0 10px #ff5da2;
+      text-shadow: 0 0 15px #ff5da2;
       margin-bottom: 30px;
     }
 
@@ -29,7 +37,7 @@
       margin: 0 auto 30px;
       width: 100%;
       max-width: 500px;
-      filter: drop-shadow(0 0 6px #ff5da2);
+      filter: drop-shadow(0 0 10px #ff5da2);
     }
 
     .lyrics {
@@ -37,12 +45,18 @@
       background: rgba(255, 255, 255, 0.05);
       padding: 25px;
       border-radius: 16px;
-      border: 1px solid #ff5da2;
+      border: 2px solid #ff5da2;
       backdrop-filter: blur(10px);
       max-width: 900px;
       margin: 0 auto;
       text-align: left;
-      box-shadow: 0 0 25px rgba(255, 93, 162, 0.2);
+      box-shadow: 0 0 25px rgba(255, 93, 162, 0.3);
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { box-shadow: 0 0 15px #ff5da2, 0 0 30px #ff2d89; }
+      50% { box-shadow: 0 0 25px #ff5da2, 0 0 50px #ff2d89; }
     }
 
     .lyrics::first-line {
@@ -52,17 +66,17 @@
 
     .back-button {
       position: fixed;
-      top: 20px;
-      left: 20px;
+      bottom: 20px;
+      right: 20px;
       background: #ff5da2;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 12px;
+      padding: 12px 20px;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 0 15px #ff5da2;
       transition: all 0.3s ease;
-      z-index: 999;
+      z-index: 9999;
     }
 
     .back-button:hover {
@@ -77,16 +91,15 @@
       color: #999;
     }
 
-    /* 動態霓虹背景粒子 */
+    /* 動態星星背景 */
     .stars {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: transparent;
-      pointer-events: none;
       z-index: 0;
+      pointer-events: none;
     }
 
     .star {
@@ -95,12 +108,13 @@
       height: 2px;
       background: #ff5da2;
       border-radius: 50%;
-      animation: twinkle 2s infinite ease-in-out;
+      opacity: 0.6;
+      animation: twinkle 3s infinite ease-in-out;
     }
 
     @keyframes twinkle {
-      0%, 100% { opacity: 0.2; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.5); }
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.5); opacity: 1; }
     }
 
     @media (max-width: 600px) {
@@ -118,7 +132,7 @@
       }
 
       .back-button {
-        padding: 8px 16px;
+        padding: 10px 18px;
         font-size: 14px;
       }
     }
@@ -126,19 +140,19 @@
 </head>
 <body>
 
-  <!-- 返回按鈕 -->
-  <a class="back-button" href="index.html">← 返回主頁</a>
-
-  <!-- 動態背景星星 -->
+  <!-- 星星背景 -->
   <div class="stars" id="stars"></div>
 
+  <!-- 主標題 -->
   <h1>🎤 零號戰區主題曲 - 2025</h1>
 
+  <!-- 音樂播放器 -->
   <audio controls>
     <source src="0Hao屌BB.m4a" type="audio/mp4">
     您的瀏覽器不支援音樂播放QQ
   </audio>
 
+  <!-- 歌詞區 -->
   <div class="lyrics">
 老子有一天會讓我們餘額多幾個零  
 那些旁人說的屁話我跟我兄弟不會聽  
@@ -185,23 +199,27 @@ Let’s go 當我們出場 就知道是小皓帶的隊
 記住我們名字叫做 —— 零號戰區 *N
   </div>
 
+  <!-- 返回主頁 -->
+  <a class="back-button" href="index.html">← 返回主頁</a>
+
+  <!-- 網頁底部 -->
   <footer>
     © 2025 零號戰區｜主題曲專頁
   </footer>
 
-  <!-- 星星動畫腳本 -->
+  <!-- 星星動畫 -->
   <script>
-    const starCount = 80;
     const starsContainer = document.getElementById("stars");
-
+    const starCount = 100;
     for (let i = 0; i < starCount; i++) {
       const star = document.createElement("div");
       star.className = "star";
       star.style.top = Math.random() * 100 + "%";
       star.style.left = Math.random() * 100 + "%";
-      star.style.animationDelay = Math.random() * 3 + "s";
+      star.style.animationDelay = Math.random() * 5 + "s";
       starsContainer.appendChild(star);
     }
   </script>
+
 </body>
 </html>
