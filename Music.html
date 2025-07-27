@@ -8,40 +8,66 @@
     body {
       margin: 0;
       padding: 0;
-      background: #0f0f0f;
+      background: radial-gradient(circle at center, #1b1b1b, #0a0a0a);
       color: #fff;
       font-family: "Segoe UI", "微軟正黑體", sans-serif;
       line-height: 1.8;
       padding: 30px 20px;
+      overflow-x: hidden;
     }
 
     h1 {
       text-align: center;
       color: #ff5da2;
-      margin-bottom: 20px;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px #ff5da2;
+      margin-bottom: 30px;
     }
 
     audio {
       display: block;
       margin: 0 auto 30px;
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
+      filter: drop-shadow(0 0 6px #ff5da2);
     }
 
     .lyrics {
       white-space: pre-wrap;
       background: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #444;
-      max-width: 800px;
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid #ff5da2;
+      backdrop-filter: blur(10px);
+      max-width: 900px;
       margin: 0 auto;
       text-align: left;
+      box-shadow: 0 0 25px rgba(255, 93, 162, 0.2);
     }
 
     .lyrics::first-line {
       font-weight: bold;
       color: #ff88cc;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #ff5da2;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 15px #ff5da2;
+      transition: all 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-button:hover {
+      background: #ff2d89;
+      box-shadow: 0 0 25px #ff2d89;
     }
 
     footer {
@@ -51,20 +77,62 @@
       color: #999;
     }
 
+    /* 動態霓虹背景粒子 */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ff5da2;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 20px 15px;
       }
 
+      h1 {
+        font-size: 1.8em;
+      }
+
       .lyrics {
         font-size: 15px;
+        padding: 18px;
+      }
+
+      .back-button {
+        padding: 8px 16px;
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <h1>🎤 零號戰區主題曲-2025</h1>
+  <!-- 返回按鈕 -->
+  <a class="back-button" href="index.html">← 返回主頁</a>
+
+  <!-- 動態背景星星 -->
+  <div class="stars" id="stars"></div>
+
+  <h1>🎤 零號戰區主題曲 - 2025</h1>
 
   <audio controls>
     <source src="0Hao屌BB.m4a" type="audio/mp4">
@@ -120,5 +188,20 @@ Let’s go 當我們出場 就知道是小皓帶的隊
   <footer>
     © 2025 零號戰區｜主題曲專頁
   </footer>
+
+  <!-- 星星動畫腳本 -->
+  <script>
+    const starCount = 80;
+    const starsContainer = document.getElementById("stars");
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDelay = Math.random() * 3 + "s";
+      starsContainer.appendChild(star);
+    }
+  </script>
 </body>
 </html>
