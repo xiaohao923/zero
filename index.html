@@ -32,7 +32,6 @@
 
     nav h2 {
       font-size: 1.5em;
-      margin-bottom: 10px;
     }
 
     nav ul {
@@ -40,7 +39,6 @@
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
     nav a {
@@ -125,44 +123,34 @@
       opacity: 0.7;
     }
 
-    /* 音樂控制面板 */
-    #music-controls {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.75);
-      padding: 12px 16px;
+    /* 🎵 音樂播放器樣式 */
+    .music-player {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
-      color: white;
-      font-size: 14px;
-      box-shadow: 0 0 15px #ff5da2;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 999;
+      border: 1px solid #ff5da2;
+      backdrop-filter: blur(6px);
     }
 
-    #music-controls button {
+    .music-player button {
       background: #ff5da2;
       border: none;
       color: white;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.2s;
       font-weight: bold;
+      margin: 0 6px;
     }
 
-    #music-controls button:hover {
-      background: #ff2d89;
-    }
-
-    #music-controls input[type="range"] {
-      width: 120px;
+    .music-player input[type="range"] {
+      width: 60%;
+      margin: 10px 0;
       accent-color: #ff5da2;
     }
 
-    /* 音符動畫 */
+    /* 🎶 音符動畫 */
     .note {
       position: fixed;
       font-size: 24px;
@@ -181,25 +169,9 @@
         opacity: 0;
       }
     }
-
-    @media (max-width: 600px) {
-      #music-controls {
-        flex-direction: column;
-        align-items: flex-start;
-        font-size: 12px;
-        bottom: 15px;
-        right: 15px;
-      }
-
-      #music-controls input[type="range"] {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- ⬆️ 導覽列 -->
   <nav>
     <h2>ø零號戰區ø</h2>
     <ul>
@@ -238,7 +210,23 @@
         <li>家族內不定時福利</li>
         <li>每週抽獎 🎟️</li>
       </ul>
-      
+
+      <!-- 🎵 音樂播放器區塊 -->
+      <div class="music-player">
+        <audio id="bgm" loop>
+          <source src="0Hao屌BB.m4a" type="audio/mp4">
+          你的瀏覽器不支援音訊播放QQ
+        </audio>
+
+        <div>
+          <button onclick="playMusic()">▶ 播放</button>
+          <button onclick="document.getElementById('bgm').pause()">⏸ 暫停</button>
+        </div>
+
+        <input type="range" id="progressBar" value="0" min="0" step="1">
+        <div><span id="currentTime">0:00</span> / <span id="duration">0:00</span></div>
+      </div>
+
       <a class="button" href="https://lin.ee/gOGUOK3" target="_blank" style="margin-top: 20px; display: inline-block;">
         加入 LINE 客服
       </a>
@@ -247,19 +235,6 @@
         <p>© 2025 零號戰區</p>
       </footer>
     </div>
-  </div>
-
-  <!-- 🎵 音樂控制與音符飛舞 -->
-  <audio id="bgm" loop>
-    <source src="0Hao屌BB.m4a" type="audio/mp4">
-    你的瀏覽器不支援音訊播放QQ
-  </audio>
-
-  <div id="music-controls">
-    <button onclick="playMusic()">▶ 播放</button>
-    <button onclick="document.getElementById('bgm').pause()">⏸ 暫停</button>
-    <input type="range" id="progressBar" value="0" min="0" step="1">
-    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
   </div>
 
   <script>
@@ -297,17 +272,10 @@
       const note = document.createElement("div");
       note.className = "note";
       note.textContent = "🎵";
-
-      // 隨機位置（右下角附近）
-      note.style.left = (window.innerWidth - 100 + Math.random() * 40) + "px";
-      note.style.top = (window.innerHeight - 100 + Math.random() * 20) + "px";
-
+      note.style.left = (window.innerWidth / 2 + Math.random() * 100 - 50) + "px";
+      note.style.top = (window.scrollY + window.innerHeight / 2 + Math.random() * 50 - 25) + "px";
       document.body.appendChild(note);
-
-      // 2 秒後自動刪除
-      setTimeout(() => {
-        note.remove();
-      }, 2000);
+      setTimeout(() => note.remove(), 2000);
     }
   </script>
 </body>
